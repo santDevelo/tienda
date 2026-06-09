@@ -1,13 +1,13 @@
 package com.tienda.repository;
 
-import com.tienda.domain.Categoria;
+import com.tienda.domain.Producto;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CategoriaRepository extends JpaRepository<Categoria, Integer> {
+public interface ProductoRepository extends JpaRepository<Producto, Integer> {
 
-    public List<Categoria> findByActivoTrue();
+    public List<Producto> findByActivoTrue();
     
 }
