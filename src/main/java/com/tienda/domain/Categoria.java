@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.tienda.domain;
 
 import jakarta.persistence.Column;
@@ -14,6 +10,10 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import java.io.Serializable;
 import lombok.Data;
+//Clase 6
+import java.util.List;
+import jakarta.persistence.*;
+import jakarta.persistence.OneToMany;
 
 @Data
 @Entity
@@ -39,4 +39,8 @@ public class Categoria implements Serializable {
 
     @Column(name = "activo")
     private Boolean activo;
+ 
+   @OneToMany(mappedBy = "categoria")
+    private List<Producto> productos;
+
 }
