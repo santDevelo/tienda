@@ -65,6 +65,8 @@ public class ProductoService {
             throw new IllegalStateException("No se puede eliminar el producto. Tiene datos asociados.", e);
         }
     }
+    //Consultas
+    
     
     @Transactional(readOnly = true)
     public List<Producto> consultaDerivada(double precioInf, double precioSup) {
@@ -80,8 +82,13 @@ public class ProductoService {
     public List<Producto> consultaSQL(double precioInf, double precioSup) {
         return productoRepository.consultaSQL(precioInf, precioSup);
     }
+    
+    //consulta derivada para la practica de la clase 8
+    public List<Producto> consultaDescripcion(String descripcion) {
+        return productoRepository
+                .findByDescripcionContainingIgnoreCase(descripcion);
+    }
 
 }
-
 
 
