@@ -79,12 +79,13 @@
                         </ul>
 
                         <ul class="navbar-nav" sec:authorize="isAuthenticated()">
-                            <li class="nav-item my-auto">
-                                <a class="nav-link d-flex align-items-center">
-                                    <i class="fas fa-user"></i>
-                                    <span sec:authentication="name" class="ms-1"></span>
-                                </a>
-                            </li>
+                    <li class="nav-item my-auto">
+                        <a class="nav-link">
+                            <img th:src="@{${session.imagenUsuario}}"
+                                 alt="your image" height="40" class="round-circle"/>
+                            <span sec:authentication="name" class="ms-1"></span>
+                        </a>
+                    </li>
 
                             <li class="nav-item my-auto">
                                 <form method="post" th:action="@{/logout}">
