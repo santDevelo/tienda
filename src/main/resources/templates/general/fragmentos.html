@@ -2,21 +2,18 @@
 <head th:fragment="head">
 
     <title>techshop</title>
-
     <meta charset="UTF-8"/>
-
     <link rel="icon" type="image/png" sizes="16x16" href="/fav/favicon-16x16.png"/>
     <link rel="icon" type="image/png" sizes="32x32" href="/fav/favicon-32x32.png"/>
     <link rel="icon" type="image/png" sizes="96x96" href="/fav/favicon-96x96.png"/>
     <link rel="icon" type="image/png" sizes="256x256" href="/fav/favicon-256x256.png"/>
-
     <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
     <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
-
     <script src="/webjars/jquery/jquery.min.js"></script>
     <script th:src="@{/js/rutinas.js}"></script>
     <script th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
-
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
 </head>
 
 <!-- Fragmento #2  define el encabezado de las páginas, en concreto el menú y enlaces rápidos -->
