@@ -32,7 +32,7 @@ public class UsuarioController {
         var usuarios = usuarioService.getUsuarios(false);
         model.addAttribute("usuarios", usuarios);
         model.addAttribute("totalUsuarios", usuarios.size());
-        return "/usuario/listado";
+        return "usuario/listado";
     }
 
     @PostMapping("/guardar")
@@ -97,6 +97,6 @@ public class UsuarioController {
         Usuario usuario = usuarioOpt.get();
         usuario.setPassword("");
         model.addAttribute("usuario", usuario);
-        return "/usuario/modifica";
+        return "usuario/modifica";
     }
 }

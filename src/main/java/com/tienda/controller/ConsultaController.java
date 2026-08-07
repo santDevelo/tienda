@@ -22,7 +22,7 @@ public class ConsultaController {
     public String listado(Model model) {
         var productos = productoService.getProductos(false);
         model.addAttribute("productos", productos);
-        return "/consultas/listado";
+        return "consultas/listado";
     }
     
     
@@ -36,7 +36,7 @@ public class ConsultaController {
         model.addAttribute("productos", productos);
         model.addAttribute("precioInf", precioInf);
         model.addAttribute("precioSup", precioSup);
-        return "/consultas/listado";
+        return "consultas/listado";
     }
 
     @PostMapping("/consultaJPQL")
@@ -47,7 +47,7 @@ public class ConsultaController {
         model.addAttribute("productos", productos);
         model.addAttribute("precioInf", precioInf);
         model.addAttribute("precioSup", precioSup);
-        return "/consultas/listado";
+        return "consultas/listado";
     }
 
     @PostMapping("/consultaSQL")
@@ -58,7 +58,7 @@ public class ConsultaController {
         model.addAttribute("productos", productos);
         model.addAttribute("precioInf", precioInf);
         model.addAttribute("precioSup", precioSup);
-        return "/consultas/listado";
+        return "consultas/listado";
     }
     
     //consulta derivada por nombre para la practica de la semana 8

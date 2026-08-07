@@ -32,7 +32,7 @@ public class ConstanteController {
         var lista = constanteService.getConstantes();
         model.addAttribute("constantes", lista);
         model.addAttribute("totalConstantes", lista.size());
-        return "/constante/listado";
+        return "constante/listado";
     }
 
     @PostMapping("/guardar")
@@ -67,7 +67,7 @@ public class ConstanteController {
         try {
             Constante constante = constanteService.getConstante(idConstante);
             model.addAttribute("constante", constante);
-            return "/constante/modifica";
+            return "constante/modifica";
         } catch (NoSuchElementException e) {
             // Captura la excepción de 'no encontrado' del servicio
             redirectAttributes.addFlashAttribute("error", messageSource.getMessage("constante.error01", null, Locale.getDefault()));

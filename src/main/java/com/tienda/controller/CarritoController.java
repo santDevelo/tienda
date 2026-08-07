@@ -37,7 +37,7 @@ public class CarritoController {
         model.addAttribute("carritoItems", carrito);
         model.addAttribute("totalCarrito", carritoService.calcularTotal(carrito));
 
-        return "/carrito/listado";
+        return "carrito/listado";
     }
 
     // --- 2. AGREGAR PRODUCTO AL CARRITO ---
@@ -63,14 +63,14 @@ public class CarritoController {
             model.addAttribute("listaItems", carrito);
 
             // 5. Retornar el fragmento HTML
-            return new ModelAndView("/carrito/fragmentos :: verCarrito", model.asMap());
+            return new ModelAndView("carrito/fragmentos :: verCarrito", model.asMap());
 
         } catch (RuntimeException e) {
             // 6. Manejo de errores (p. ej., stock insuficiente, producto no existe)
             model.addAttribute("errorMensaje", e.getMessage());
 
             // Retorna un fragmento de error genérico que muestre el mensaje
-            return new ModelAndView("/errores/fragmentos :: errorMensaje", model.asMap());
+            return new ModelAndView("errores/fragmentos :: errorMensaje", model.asMap());
         }
     }
 
@@ -111,7 +111,7 @@ public class CarritoController {
         model.addAttribute("item", item);
         
         // 4. Retornar la vista
-        return "/carrito/modifica";
+        return "carrito/modifica";
     }
 
     // --- 4. ACTUALIZAR CANTIDAD DESDE LA VISTA ---
@@ -181,6 +181,6 @@ public class CarritoController {
         Factura factura = facturaService.getFacturaConVentas(idFactura); 
         
         model.addAttribute("factura", factura);
-        return "/carrito/verFactura"; // Nombre del archivo Thymeleaf
+        return "carrito/verFactura"; // Nombre del archivo Thymeleaf
     }
 }

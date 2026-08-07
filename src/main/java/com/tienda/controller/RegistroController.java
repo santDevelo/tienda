@@ -24,19 +24,19 @@ public class RegistroController {
     
     @GetMapping("/nuevo")
     public String nuevo(Model model, Usuario usuario) {
-        return "/registro/nuevo";
+        return "registro/nuevo";
     }
 
     @GetMapping("/recordar")
     public String recordar(Model model, Usuario usuario) {
-        return "/registro/recordar";
+        return "registro/recordar";
     }
 
     @PostMapping("/crearUsuario")
     public String crearUsuario(Model model, Usuario usuario) 
             throws MessagingException {
         model = registroService.crearUsuario(model, usuario);
-        return "/registro/salida";
+        return "registro/salida";
     }
 
     @GetMapping("/activacion/{usuario}/{id}")
@@ -46,9 +46,9 @@ public class RegistroController {
             @PathVariable(value = "id") String id) {
         model = registroService.activar(model, usuario, id);
         if (model.containsAttribute("usuario")) {
-            return "/registro/activa";
+            return "registro/activa";
         } else {
-            return "/registro/salida";
+            return "registro/salida";
         }
     }
 
@@ -64,6 +64,6 @@ public class RegistroController {
     public String recordarUsuario(Model model, Usuario usuario) 
             throws MessagingException {
         model = registroService.recordarUsuario(model, usuario);
-        return "/registro/salida";
+        return "registro/salida";
     }
 }
